@@ -10,28 +10,23 @@ export default function WhatWeDoSection() {
   const services = [
     {
       icon: Factory,
-      title: 'Liquefação',
-      description: 'Plantas de liquefação de gás natural com tecnologia de ponta',
+      key: 'liquefaction',
     },
     {
       icon: Truck,
-      title: 'Transporte',
-      description: 'Logística multimodal para distribuição eficiente',
+      key: 'transport',
     },
     {
       icon: Ship,
-      title: 'Cabotagem',
-      description: 'Transporte marítimo de GNL ao longo da costa brasileira',
+      key: 'cabotage',
     },
     {
       icon: Droplets,
-      title: 'Estocagem',
-      description: 'Armazenamento seguro e estratégico de gás natural',
+      key: 'storage',
     },
     {
       icon: Flame,
-      title: 'Regaseificação',
-      description: 'Conversão de GNL para uso industrial e comercial',
+      key: 'regasification',
     },
   ];
 
@@ -68,7 +63,7 @@ export default function WhatWeDoSection() {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-16">
           {services.map((service, index) => (
             <motion.div
-              key={service.title}
+              key={service.key}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -78,8 +73,8 @@ export default function WhatWeDoSection() {
               <div className="w-14 h-14 bg-primary-100 dark:bg-primary-900/30 rounded-xl flex items-center justify-center mx-auto mb-4">
                 <service.icon className="w-7 h-7 text-primary-600 dark:text-primary-400" />
               </div>
-              <h3 className="font-semibold text-dark-800 dark:text-white mb-2">{service.title}</h3>
-              <p className="text-sm text-dark-500 dark:text-dark-400">{service.description}</p>
+              <h3 className="font-semibold text-dark-800 dark:text-white mb-2">{t(`services.${service.key}.title`)}</h3>
+              <p className="text-sm text-dark-500 dark:text-dark-400">{t(`services.${service.key}.description`)}</p>
             </motion.div>
           ))}
         </div>

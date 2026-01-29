@@ -102,12 +102,10 @@ export default function EthicsPage() {
             className="text-center max-w-3xl mx-auto"
           >
             <h3 className="text-2xl font-bold text-dark-800 dark:text-white mb-4">
-              Compromisso com a Integridade
+              {t('commitment.title')}
             </h3>
             <p className="text-dark-600 dark:text-dark-300 leading-relaxed">
-              Atuamos com ética, responsabilidade social e transparência. 
-              Construímos juntos, trabalhamos com simplicidade e somos verdadeiros. 
-              Agimos com propósito e entregamos resultados com excelência.
+              {t('commitment.description')}
             </p>
           </motion.div>
         </div>

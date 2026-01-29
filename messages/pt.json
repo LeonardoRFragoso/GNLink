@@ -37,10 +37,54 @@
     "whatWeDoSection": {
       "title": "O Que Fazemos",
       "description": "Desenvolvemos soluções customizadas e inovadoras de liquefação, transporte, cabotagem, estocagem e regaseificação do gás natural liquefeito.",
+      "services": {
+        "liquefaction": {
+          "title": "Liquefação",
+          "description": "Plantas de liquefação de gás natural com tecnologia de ponta"
+        },
+        "transport": {
+          "title": "Transporte",
+          "description": "Logística multimodal para distribuição eficiente"
+        },
+        "cabotage": {
+          "title": "Cabotagem",
+          "description": "Transporte marítimo de GNL ao longo da costa brasileira"
+        },
+        "storage": {
+          "title": "Estocagem",
+          "description": "Armazenamento seguro e estratégico de gás natural"
+        },
+        "regasification": {
+          "title": "Regaseificação",
+          "description": "Conversão de GNL para uso industrial e comercial"
+        }
+      },
       "items": {
         "competitiveness": "Contribuímos para a competitividade e maior eficiência operacional e ambiental do setor.",
         "expansion": "Facilitamos a expansão dos negócios entre empresas e distribuidoras de gás natural.",
         "innovation": "Oferecemos modelos de negócio inovadores através da interiorização do gás natural nos estados do Brasil."
+      }
+    },
+    "applicationsSection": {
+      "title": "Aplicações do GNL",
+      "description": "A transição energética é uma das principais necessidades mundiais, e o gás natural tem papel fundamental nesse processo",
+      "items": {
+        "interiorization": {
+          "title": "Interiorização do Gás",
+          "description": "Levamos o gás natural para regiões não atendidas por gasodutos, promovendo o desenvolvimento regional."
+        },
+        "transition": {
+          "title": "Transição Energética",
+          "description": "O gás natural é peça-chave na descarbonização, com menor impacto ambiental que combustíveis tradicionais."
+        },
+        "esg": {
+          "title": "ESG",
+          "description": "Compromisso com práticas sustentáveis, responsabilidade social e governança corporativa."
+        },
+        "hydrogen": {
+          "title": "Hidrogênio Verde (H2V)",
+          "description": "Investimos no futuro com projetos de hidrogênio verde para uma matriz energética limpa."
+        }
       }
     },
     "projectsSection": {
@@ -132,6 +176,10 @@
       "description": "O Canal de Ética é um meio seguro e confidencial para reportar situações que violem nosso Código de Conduta ou a legislação vigente.",
       "cta": "Acessar Canal de Ética",
       "url": "https://www.contatoseguro.com.br/gnlink"
+    },
+    "commitment": {
+      "title": "Compromisso com a Integridade",
+      "description": "Atuamos com ética, responsabilidade social e transparência. Construímos juntos, trabalhamos com simplicidade e somos verdadeiros. Agimos com propósito e entregamos resultados com excelência."
     }
   },
   "careers": {

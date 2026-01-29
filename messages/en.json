@@ -37,10 +37,54 @@
     "whatWeDoSection": {
       "title": "What We Do",
       "description": "We develop customized and innovative solutions for liquefaction, transportation, cabotage, storage and regasification of liquefied natural gas.",
+      "services": {
+        "liquefaction": {
+          "title": "Liquefaction",
+          "description": "State-of-the-art natural gas liquefaction plants"
+        },
+        "transport": {
+          "title": "Transport",
+          "description": "Multimodal logistics for efficient distribution"
+        },
+        "cabotage": {
+          "title": "Cabotage",
+          "description": "Maritime LNG transport along the Brazilian coast"
+        },
+        "storage": {
+          "title": "Storage",
+          "description": "Safe and strategic natural gas storage"
+        },
+        "regasification": {
+          "title": "Regasification",
+          "description": "LNG conversion for industrial and commercial use"
+        }
+      },
       "items": {
         "competitiveness": "We contribute to competitiveness and greater operational and environmental efficiency in the sector.",
         "expansion": "We facilitate business expansion between companies and natural gas distributors.",
         "innovation": "We offer innovative business models through the interiorization of natural gas in Brazilian states."
+      }
+    },
+    "applicationsSection": {
+      "title": "LNG Applications",
+      "description": "The energy transition is one of the main global needs, and natural gas plays a fundamental role in this process",
+      "items": {
+        "interiorization": {
+          "title": "Gas Interiorization",
+          "description": "We bring natural gas to regions not served by pipelines, promoting regional development."
+        },
+        "transition": {
+          "title": "Energy Transition",
+          "description": "Natural gas is key in decarbonization, with lower environmental impact than traditional fuels."
+        },
+        "esg": {
+          "title": "ESG",
+          "description": "Commitment to sustainable practices, social responsibility and corporate governance."
+        },
+        "hydrogen": {
+          "title": "Green Hydrogen (H2V)",
+          "description": "We invest in the future with green hydrogen projects for a clean energy matrix."
+        }
       }
     },
     "projectsSection": {
@@ -132,6 +176,10 @@
       "description": "The Ethics Channel is a safe and confidential way to report situations that violate our Code of Conduct or current legislation.",
       "cta": "Access Ethics Channel",
       "url": "https://www.contatoseguro.com.br/gnlink"
+    },
+    "commitment": {
+      "title": "Commitment to Integrity",
+      "description": "We act with ethics, social responsibility and transparency. We build together, work with simplicity and are truthful. We act with purpose and deliver results with excellence."
     }
   },
   "careers": {
