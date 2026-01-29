@@ -9,6 +9,14 @@ function getArticleImageUrl(url: string): string {
   return `https://api.microlink.io/?url=${encodeURIComponent(url)}&meta=true&embed=image.url`;
 }
 
+const FALLBACK_IMAGE = 'data:image/svg+xml,' + encodeURIComponent(`
+  <svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+    <rect fill="#1e3a5f" width="400" height="300"/>
+    <text x="200" y="140" text-anchor="middle" fill="#4fd1c5" font-family="Arial" font-size="24" font-weight="bold">GNLink</text>
+    <text x="200" y="170" text-anchor="middle" fill="#a0aec0" font-family="Arial" font-size="14">Na Mídia</text>
+  </svg>
+`);
+
 const news = [
   {
     id: 1,
@@ -83,6 +91,9 @@ export default function NewsPreview() {
                       alt={item.title}
                       className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
                       loading="lazy"
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).src = FALLBACK_IMAGE;
+                      }}
                     />
                   </div>
                   
