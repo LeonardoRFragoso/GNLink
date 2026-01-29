@@ -1,0 +1,222 @@
+{
+  "metadata": {
+    "title": "GNLink - We bring natural gas where it doesn't reach",
+    "description": "We exist to bring natural gas where it doesn't reach. GNLink is a natural gas distributor from the Lorinvest asset manager."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "whatWeDo": "What We Do",
+    "applications": "LNG Applications",
+    "team": "Our Team",
+    "projects": "Projects",
+    "ethics": "Our Ethics",
+    "codeOfConduct": "Code of Conduct",
+    "ethicsChannel": "Ethics Channel",
+    "news": "News",
+    "careers": "Work With Us",
+    "contact": "Contact"
+  },
+  "projects": {
+    "barraBonita": "Barra Bonita",
+    "itabuna": "Itabuna",
+    "carnauba": "Carnaúba"
+  },
+  "hero": {
+    "title": "We bring natural gas where it doesn't reach",
+    "subtitle": "We are a key player in the energy transition of Brazil and the world",
+    "cta": "Discover Our Projects",
+    "ctaSecondary": "Contact Us"
+  },
+  "home": {
+    "aboutSection": {
+      "title": "About Us",
+      "description": "GNLink is a natural gas distributor from the Lorinvest asset manager, which develops innovative, scalable projects committed to sustainable principles since 1953.",
+      "cta": "Learn More"
+    },
+    "whatWeDoSection": {
+      "title": "What We Do",
+      "description": "We develop customized and innovative solutions for liquefaction, transportation, cabotage, storage and regasification of liquefied natural gas.",
+      "items": {
+        "competitiveness": "We contribute to competitiveness and greater operational and environmental efficiency in the sector.",
+        "expansion": "We facilitate business expansion between companies and natural gas distributors.",
+        "innovation": "We offer innovative business models through the interiorization of natural gas in Brazilian states."
+      }
+    },
+    "projectsSection": {
+      "title": "Our Projects",
+      "description": "Discover the projects that are transforming Brazil's energy landscape",
+      "viewAll": "View All Projects"
+    },
+    "newsSection": {
+      "title": "Latest News",
+      "description": "Stay up to date with GNLink news",
+      "viewAll": "View All News",
+      "readMore": "Read More"
+    },
+    "ctaSection": {
+      "title": "Be Part of the Energy Transition",
+      "description": "Contact us and discover how we can collaborate for a more sustainable future",
+      "cta": "Contact Us"
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "We exist to bring natural gas where it doesn't reach",
+    "description": "GNLink is a natural gas distributor from the Lorinvest asset manager, which develops innovative, scalable projects committed to sustainable principles since 1953.",
+    "mission": {
+      "title": "Our Mission",
+      "description": "To operate in the liquid and gaseous gas segment with an energy transition focus, where gas still doesn't reach."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "description": "To provide access to competitive, safe and sustainable energy to our customers with replicable projects and fast implementation."
+    },
+    "values": {
+      "title": "Our Values",
+      "ethics": "We act with ethics, social responsibility and transparency.",
+      "teamwork": "We build together, work with simplicity and are truthful.",
+      "excellence": "We act with purpose and deliver results with excellence to shareholders."
+    },
+    "gases": {
+      "title": "Our Gases",
+      "description": "Gases are key in the energy transition process, through multimodal distribution/logistics of:",
+      "gnl": "LNG - Liquefied Natural Gas",
+      "gnc": "CNG - Compressed Natural Gas",
+      "gnr": "RNG - Renewable Natural Gas",
+      "co2": "CO2 - Carbon Dioxide",
+      "h2v": "H2V - Green Hydrogen"
+    },
+    "context": {
+      "title": "The Brazilian Context",
+      "description": "Brazil imports substitute fuels and gas pipeline infrastructure is very limited. GNLink works to change this scenario."
+    }
+  },
+  "team": {
+    "title": "Our Team",
+    "subtitle": "Meet the professionals leading GNLink",
+    "members": {
+      "marcelo": {
+        "name": "Marcelo Rodrigues",
+        "role": "Executive Director",
+        "bio": "Over 35 years of experience in Industrial, Medical and Hydrogen Gas markets, as well as natural gas, leading various businesses."
+      },
+      "laila": {
+        "name": "Laila Helayel",
+        "role": "Legal Director",
+        "bio": "Law graduate with 20 years of experience in corporate law, corporate governance, contracts and M&A."
+      },
+      "silvino": {
+        "name": "Silvino Pinto",
+        "role": "Commercial Director",
+        "bio": "Professional with over 30 years of experience in Business, Commercial, Customer Service and Market Development sectors."
+      },
+      "cleber": {
+        "name": "Cleber Hamada",
+        "role": "New Business Director",
+        "bio": "Professional with over 15 years of experience in M&A, corporate strategy, new business development and innovation."
+      }
+    }
+  },
+  "ethics": {
+    "title": "Our Ethics",
+    "subtitle": "Commitment to integrity and transparency",
+    "codeOfConduct": {
+      "title": "Code of Conduct",
+      "description": "Our Code of Conduct establishes the principles and guidelines that guide the ethical behavior of all GNLink employees.",
+      "download": "Download Code of Conduct",
+      "downloadUrl": "http://gnlink.com.br/wp-content/uploads/2024/12/GNLink-Codigo-de-Conduta-Colaboradores-v.2024.11.pdf"
+    },
+    "ethicsChannel": {
+      "title": "Ethics Channel",
+      "description": "The Ethics Channel is a safe and confidential way to report situations that violate our Code of Conduct or current legislation.",
+      "cta": "Access Ethics Channel",
+      "url": "https://www.contatoseguro.com.br/gnlink"
+    }
+  },
+  "careers": {
+    "title": "Work With Us",
+    "subtitle": "Join the team that is transforming the energy sector in Brazil",
+    "description": "At GNLink, we value professionals committed to innovation and sustainability. Come be part of our team!",
+    "form": {
+      "name": "Full name",
+      "email": "Email",
+      "phone": "Phone",
+      "position": "Desired position",
+      "message": "Message",
+      "resume": "Attach resume (PDF)",
+      "submit": "Submit application",
+      "success": "Application submitted successfully!",
+      "error": "Error submitting application. Please try again."
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Get in touch with us",
+    "description": "We are ready to serve you. Contact us through our channels.",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "company": "Company",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Send message",
+      "success": "Message sent successfully!",
+      "error": "Error sending message. Please try again."
+    },
+    "info": {
+      "title": "Contact Information"
+    }
+  },
+  "projectsPage": {
+    "title": "Our Projects",
+    "subtitle": "Discover the projects that are transforming Brazil's energy landscape",
+    "mapTitle": "Project Locations",
+    "details": {
+      "location": "Location",
+      "capacity": "Capacity",
+      "status": "Status",
+      "description": "Description"
+    },
+    "statuses": {
+      "operating": "Operating",
+      "construction": "Under construction",
+      "development": "In development"
+    }
+  },
+  "news": {
+    "title": "News",
+    "subtitle": "Follow GNLink news in the media",
+    "readMore": "Read more",
+    "source": "Source"
+  },
+  "footer": {
+    "description": "We exist to bring natural gas where it doesn't reach. We are a key player in the energy transition.",
+    "quickLinks": "Quick Links",
+    "contactInfo": "Contact",
+    "followUs": "Follow Us",
+    "rights": "All rights reserved.",
+    "address": "Rua Lauro Muller, 116, suite 3504, Rio de Janeiro, RJ - ZIP: 22.290-160",
+    "email": "contato@gnlink.com.br",
+    "phone": "+55 (21) 3269-4071"
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "viewMore": "View More",
+    "send": "Send",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "back": "Back"
+  },
+  "language": {
+    "select": "Language",
+    "pt": "Português",
+    "en": "English"
+  },
+  "theme": {
+    "light": "Light Mode",
+    "dark": "Dark Mode"
+  }
+}

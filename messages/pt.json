@@ -1,0 +1,222 @@
+{
+  "metadata": {
+    "title": "GNLink - Levamos o gás natural aonde ele não chega",
+    "description": "Existimos para levar o gás natural aonde ele não chega. A GNLink é uma distribuidora de gás natural da gestora de recursos Lorinvest."
+  },
+  "nav": {
+    "home": "Início",
+    "about": "Quem Somos",
+    "whatWeDo": "O Que Fazemos",
+    "applications": "Aplicações do GNL",
+    "team": "Nosso Time",
+    "projects": "Projetos",
+    "ethics": "Nossa Ética",
+    "codeOfConduct": "Código de Conduta",
+    "ethicsChannel": "Canal de Ética",
+    "news": "Notícias",
+    "careers": "Trabalhe Conosco",
+    "contact": "Contato"
+  },
+  "projects": {
+    "barraBonita": "Barra Bonita",
+    "itabuna": "Itabuna",
+    "carnauba": "Carnaúba"
+  },
+  "hero": {
+    "title": "Levamos o gás natural aonde ele não chega",
+    "subtitle": "Somos peça-chave na transição energética da matriz do Brasil e do mundo",
+    "cta": "Conheça Nossos Projetos",
+    "ctaSecondary": "Entre em Contato"
+  },
+  "home": {
+    "aboutSection": {
+      "title": "Quem Somos",
+      "description": "A GNLink é uma distribuidora de gás natural da gestora de recursos Lorinvest, que desenvolve projetos inovadores, escaláveis e comprometidos com princípios sustentáveis desde 1953.",
+      "cta": "Saiba Mais"
+    },
+    "whatWeDoSection": {
+      "title": "O Que Fazemos",
+      "description": "Desenvolvemos soluções customizadas e inovadoras de liquefação, transporte, cabotagem, estocagem e regaseificação do gás natural liquefeito.",
+      "items": {
+        "competitiveness": "Contribuímos para a competitividade e maior eficiência operacional e ambiental do setor.",
+        "expansion": "Facilitamos a expansão dos negócios entre empresas e distribuidoras de gás natural.",
+        "innovation": "Oferecemos modelos de negócio inovadores através da interiorização do gás natural nos estados do Brasil."
+      }
+    },
+    "projectsSection": {
+      "title": "Nossos Projetos",
+      "description": "Conheça os projetos que estão transformando o cenário energético brasileiro",
+      "viewAll": "Ver Todos os Projetos"
+    },
+    "newsSection": {
+      "title": "Últimas Notícias",
+      "description": "Fique por dentro das novidades da GNLink",
+      "viewAll": "Ver Todas as Notícias",
+      "readMore": "Leia Mais"
+    },
+    "ctaSection": {
+      "title": "Faça Parte da Transição Energética",
+      "description": "Entre em contato conosco e descubra como podemos colaborar para um futuro mais sustentável",
+      "cta": "Fale Conosco"
+    }
+  },
+  "about": {
+    "title": "Quem Somos",
+    "subtitle": "Existimos para levar o gás natural aonde ele não chega",
+    "description": "A GNLink é uma distribuidora de gás natural da gestora de recursos Lorinvest, que desenvolve projetos inovadores, escaláveis e comprometidos com princípios sustentáveis desde 1953.",
+    "mission": {
+      "title": "Nossa Missão",
+      "description": "Atuar no segmento de gases no estado líquido e gasoso com viés de transição energética, aonde o gás ainda não chega."
+    },
+    "vision": {
+      "title": "Nossa Visão",
+      "description": "Dar acesso à energia competitiva, segura e sustentável aos nossos clientes com projetos replicáveis e implementação rápida."
+    },
+    "values": {
+      "title": "Nossos Valores",
+      "ethics": "Atuamos com ética, responsabilidade social e transparência.",
+      "teamwork": "Construímos juntos, trabalhamos com simplicidade e somos verdadeiros.",
+      "excellence": "Agimos com propósito e entregamos resultados com excelência ao acionista."
+    },
+    "gases": {
+      "title": "Nossos Gases",
+      "description": "Os gases são peça-chave no processo de transição energética, através da distribuição/logística multimodal de:",
+      "gnl": "GNL - Gás Natural Liquefeito",
+      "gnc": "GNC - Gás Natural Comprimido",
+      "gnr": "GNR - Gás Natural Renovável",
+      "co2": "CO2 - Dióxido de Carbono",
+      "h2v": "H2V - Hidrogênio Verde"
+    },
+    "context": {
+      "title": "O Contexto Brasileiro",
+      "description": "O Brasil é importador de combustíveis substitutos e a infraestrutura de gasodutos é muito limitada. A GNLink atua para mudar esse cenário."
+    }
+  },
+  "team": {
+    "title": "Nosso Time",
+    "subtitle": "Conheça os profissionais que lideram a GNLink",
+    "members": {
+      "marcelo": {
+        "name": "Marcelo Rodrigues",
+        "role": "Diretor Executivo",
+        "bio": "Mais de 35 anos de experiência nos mercados de Gases Industriais, Medicinais e Hidrogênio, além de gás natural, liderando diversos negócios."
+      },
+      "laila": {
+        "name": "Laila Helayel",
+        "role": "Diretora Jurídica",
+        "bio": "Profissional graduada em direito com 20 anos de experiência na área societária, governança corporativa, contratos e M&A."
+      },
+      "silvino": {
+        "name": "Silvino Pinto",
+        "role": "Diretor Comercial",
+        "bio": "Profissional com mais de 30 anos de experiência nos setores de Negócios, Comercial, Atendimento ao Cliente e Desenvolvimento de Mercado."
+      },
+      "cleber": {
+        "name": "Cleber Hamada",
+        "role": "Diretor de Novos Negócios",
+        "bio": "Profissional com mais de 15 anos de experiência em M&A, estratégia corporativa, desenvolvimento de novos negócios e inovação."
+      }
+    }
+  },
+  "ethics": {
+    "title": "Nossa Ética",
+    "subtitle": "Compromisso com a integridade e transparência",
+    "codeOfConduct": {
+      "title": "Código de Conduta",
+      "description": "Nosso Código de Conduta estabelece os princípios e diretrizes que orientam o comportamento ético de todos os colaboradores da GNLink.",
+      "download": "Download do Código de Conduta",
+      "downloadUrl": "http://gnlink.com.br/wp-content/uploads/2024/12/GNLink-Codigo-de-Conduta-Colaboradores-v.2024.11.pdf"
+    },
+    "ethicsChannel": {
+      "title": "Canal de Ética",
+      "description": "O Canal de Ética é um meio seguro e confidencial para reportar situações que violem nosso Código de Conduta ou a legislação vigente.",
+      "cta": "Acessar Canal de Ética",
+      "url": "https://www.contatoseguro.com.br/gnlink"
+    }
+  },
+  "careers": {
+    "title": "Trabalhe Conosco",
+    "subtitle": "Faça parte do time que está transformando o setor de energia no Brasil",
+    "description": "Na GNLink, valorizamos profissionais comprometidos com a inovação e a sustentabilidade. Venha fazer parte da nossa equipe!",
+    "form": {
+      "name": "Nome completo",
+      "email": "E-mail",
+      "phone": "Telefone",
+      "position": "Cargo pretendido",
+      "message": "Mensagem",
+      "resume": "Anexar currículo (PDF)",
+      "submit": "Enviar candidatura",
+      "success": "Candidatura enviada com sucesso!",
+      "error": "Erro ao enviar candidatura. Tente novamente."
+    }
+  },
+  "contact": {
+    "title": "Contato",
+    "subtitle": "Entre em contato conosco",
+    "description": "Estamos prontos para atender você. Entre em contato através dos nossos canais.",
+    "form": {
+      "name": "Nome",
+      "email": "E-mail",
+      "phone": "Telefone",
+      "company": "Empresa",
+      "subject": "Assunto",
+      "message": "Mensagem",
+      "submit": "Enviar mensagem",
+      "success": "Mensagem enviada com sucesso!",
+      "error": "Erro ao enviar mensagem. Tente novamente."
+    },
+    "info": {
+      "title": "Informações de Contato"
+    }
+  },
+  "projectsPage": {
+    "title": "Nossos Projetos",
+    "subtitle": "Conheça os projetos que estão transformando o cenário energético brasileiro",
+    "mapTitle": "Localização dos Projetos",
+    "details": {
+      "location": "Localização",
+      "capacity": "Capacidade",
+      "status": "Status",
+      "description": "Descrição"
+    },
+    "statuses": {
+      "operating": "Em operação",
+      "construction": "Em construção",
+      "development": "Em desenvolvimento"
+    }
+  },
+  "news": {
+    "title": "Notícias",
+    "subtitle": "Acompanhe as novidades da GNLink na mídia",
+    "readMore": "Leia mais",
+    "source": "Fonte"
+  },
+  "footer": {
+    "description": "Existimos para levar o gás natural aonde ele não chega. Somos peça-chave na transição energética.",
+    "quickLinks": "Links Rápidos",
+    "contactInfo": "Contato",
+    "followUs": "Siga-nos",
+    "rights": "Todos os direitos reservados.",
+    "address": "Rua Lauro Muller, 116, sala 3504, Rio de Janeiro, RJ - CEP: 22.290-160",
+    "email": "contato@gnlink.com.br",
+    "phone": "+55 (21) 3269-4071"
+  },
+  "common": {
+    "learnMore": "Saiba Mais",
+    "viewMore": "Ver Mais",
+    "send": "Enviar",
+    "loading": "Carregando...",
+    "error": "Erro",
+    "success": "Sucesso",
+    "back": "Voltar"
+  },
+  "language": {
+    "select": "Idioma",
+    "pt": "Português",
+    "en": "English"
+  },
+  "theme": {
+    "light": "Modo Claro",
+    "dark": "Modo Escuro"
+  }
+}
