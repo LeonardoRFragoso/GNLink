@@ -22,20 +22,33 @@ function getScreenshotUrl(url: string): string {
   return `https://api.microlink.io/?url=${encodeURIComponent(url)}&screenshot=true&meta=false&embed=screenshot.url`;
 }
 
+const FALLBACK_IMAGE = 'data:image/svg+xml,' + encodeURIComponent(`
+  <svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+    <rect fill="#1e3a5f" width="400" height="300"/>
+    <text x="200" y="140" text-anchor="middle" fill="#4fd1c5" font-family="Arial" font-size="24" font-weight="bold">GNLink</text>
+    <text x="200" y="170" text-anchor="middle" fill="#a0aec0" font-family="Arial" font-size="14">Na Mídia</text>
+  </svg>
+`);
+
 function ArticleImage({ url, title }: { url: string; title: string }) {
-  const [imgSrc, setImgSrc] = useState(getArticleImageUrl(url));
   const [fallbackLevel, setFallbackLevel] = useState(0);
+  
+  const imageSources = [
+    getArticleImageUrl(url),
+    getScreenshotUrl(url),
+    FALLBACK_IMAGE
+  ];
 
   const handleError = () => {
-    if (fallbackLevel === 0) {
-      setImgSrc(getScreenshotUrl(url));
-      setFallbackLevel(1);
+    if (fallbackLevel < imageSources.length - 1) {
+      setFallbackLevel(prev => prev + 1);
     }
   };
 
   return (
     <img
-      src={imgSrc}
+      key={fallbackLevel}
+      src={imageSources[fallbackLevel]}
       alt={title}
       className="w-full h-full object-cover object-top"
       loading="lazy"
