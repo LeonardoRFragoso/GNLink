@@ -3,29 +3,33 @@
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { motion } from 'framer-motion';
-import { ArrowRight, Calendar } from 'lucide-react';
+import { ArrowRight, Calendar, ExternalLink } from 'lucide-react';
+
+function getScreenshotUrl(url: string): string {
+  return `https://api.microlink.io/?url=${encodeURIComponent(url)}&screenshot=true&meta=false&embed=screenshot.url`;
+}
 
 const news = [
   {
     id: 1,
-    title: 'GNLink inaugura nova usina em Barra Bonita',
-    excerpt: 'A empresa celebra mais um marco importante no setor de energia renovável do Brasil.',
-    date: '2024-01-15',
-    image: null,
+    title: 'GNLink recebe aval da ANP para iniciar operação de sua 1ª planta de liquefação',
+    source: 'Eixos',
+    date: '2024-11-15',
+    url: 'https://eixos.com.br/gas-natural/mercado-de-gas/gnlink-recebe-aval-da-anp-para-iniciar-operacao-de-sua-1a-planta-de-liquefacao',
   },
   {
     id: 2,
-    title: 'Parceria estratégica para expansão no Nordeste',
-    excerpt: 'Novo acordo visa ampliar a capacidade de geração de energia na região.',
-    date: '2024-01-10',
-    image: null,
+    title: 'GNLink assina contrato de liquefação e compressão de gás no RN',
+    source: 'Canal Energia',
+    date: '2024-10-20',
+    url: 'https://www.canalenergia.com.br/noticias/53275479/gnlink-assina-contrato-de-liquefacao-e-compressao-de-gas-no-rn',
   },
   {
     id: 3,
-    title: 'Prêmio de sustentabilidade para projeto Carnaúba',
-    excerpt: 'Reconhecimento internacional destaca compromisso ambiental da GNLink.',
-    date: '2024-01-05',
-    image: null,
+    title: 'A estratégia da GNLink para expandir o GNL em pequena escala',
+    source: 'EPBR',
+    date: '2024-09-18',
+    url: 'https://epbr.com.br/a-estrategia-da-gnlink-para-expandir-o-gnl-em-pequena-escala/',
   },
 ];
 
@@ -64,34 +68,44 @@ export default function NewsPreview() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Link href={`/noticias/${item.id}` as any}>
-                <div className="card dark:bg-dark-800 group cursor-pointer h-full flex flex-col">
-                  {/* Image Placeholder */}
-                  <div className="h-48 bg-gradient-to-br from-dark-200 to-dark-300 dark:from-dark-600 dark:to-dark-700 flex items-center justify-center">
-                    <div className="text-dark-400 dark:text-dark-500 text-sm">Imagem</div>
+              <a 
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block h-full"
+              >
+                <div className="card dark:bg-dark-800 group cursor-pointer h-full flex flex-col overflow-hidden">
+                  {/* Article Screenshot */}
+                  <div className="h-48 bg-gray-100 dark:bg-dark-700 overflow-hidden">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={getScreenshotUrl(item.url)}
+                      alt={item.title}
+                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+                      loading="lazy"
+                    />
                   </div>
                   
                   <div className="p-6 flex-grow flex flex-col">
-                    <div className="flex items-center gap-2 text-dark-400 dark:text-dark-500 mb-3">
-                      <Calendar className="w-4 h-4" />
-                      <time className="text-sm">{formatDate(item.date)}</time>
+                    <div className="flex items-center justify-between text-dark-400 dark:text-dark-500 mb-3">
+                      <div className="flex items-center gap-2">
+                        <Calendar className="w-4 h-4" />
+                        <time className="text-sm">{formatDate(item.date)}</time>
+                      </div>
+                      <span className="text-xs font-medium text-primary-600 dark:text-primary-400">{item.source}</span>
                     </div>
                     
-                    <h3 className="font-semibold text-lg text-dark-800 dark:text-white mb-2 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors line-clamp-2">
+                    <h3 className="font-semibold text-lg text-dark-800 dark:text-white mb-4 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors line-clamp-2">
                       {item.title}
                     </h3>
                     
-                    <p className="text-dark-500 dark:text-dark-400 text-sm mb-4 flex-grow line-clamp-3">
-                      {item.excerpt}
-                    </p>
-                    
-                    <span className="inline-flex items-center text-primary-600 dark:text-primary-400 font-medium text-sm group-hover:text-primary-700 dark:group-hover:text-primary-300 transition-colors">
+                    <span className="inline-flex items-center text-primary-600 dark:text-primary-400 font-medium text-sm group-hover:text-primary-700 dark:group-hover:text-primary-300 transition-colors mt-auto">
                       {t('readMore')}
-                      <ArrowRight className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      <ExternalLink className="ml-1 w-4 h-4" />
                     </span>
                   </div>
                 </div>
-              </Link>
+              </a>
             </motion.article>
           ))}
         </div>
