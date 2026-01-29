@@ -3,7 +3,7 @@
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import { Calendar, ExternalLink } from 'lucide-react';
-import Image from 'next/image';
+import { useState } from 'react';
 
 const sourceLogos: Record<string, { bg: string; text: string }> = {
   'Eixos': { bg: 'bg-blue-600', text: 'EIXOS' },
@@ -18,13 +18,31 @@ function getArticleImageUrl(url: string): string {
   return `https://api.microlink.io/?url=${encodeURIComponent(url)}&meta=true&embed=image.url`;
 }
 
-const FALLBACK_IMAGE = 'data:image/svg+xml,' + encodeURIComponent(`
-  <svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
-    <rect fill="#1e3a5f" width="400" height="300"/>
-    <text x="200" y="140" text-anchor="middle" fill="#4fd1c5" font-family="Arial" font-size="24" font-weight="bold">GNLink</text>
-    <text x="200" y="170" text-anchor="middle" fill="#a0aec0" font-family="Arial" font-size="14">Na Mídia</text>
-  </svg>
-`);
+function getScreenshotUrl(url: string): string {
+  return `https://api.microlink.io/?url=${encodeURIComponent(url)}&screenshot=true&meta=false&embed=screenshot.url`;
+}
+
+function ArticleImage({ url, title }: { url: string; title: string }) {
+  const [imgSrc, setImgSrc] = useState(getArticleImageUrl(url));
+  const [fallbackLevel, setFallbackLevel] = useState(0);
+
+  const handleError = () => {
+    if (fallbackLevel === 0) {
+      setImgSrc(getScreenshotUrl(url));
+      setFallbackLevel(1);
+    }
+  };
+
+  return (
+    <img
+      src={imgSrc}
+      alt={title}
+      className="w-full h-full object-cover object-top"
+      loading="lazy"
+      onError={handleError}
+    />
+  );
+}
 
 const newsItems = [
   {
@@ -183,16 +201,7 @@ export default function NewsPage() {
                     <div className="bg-white dark:bg-dark-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col overflow-hidden border border-dark-100 dark:border-dark-700 group-hover:-translate-y-1">
                       {/* Article Screenshot Preview */}
                       <div className="relative h-52 overflow-hidden bg-gray-100 dark:bg-dark-700">
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img
-                          src={getArticleImageUrl(item.url)}
-                          alt={item.title}
-                          className="w-full h-full object-cover object-top"
-                          loading="lazy"
-                          onError={(e) => {
-                            (e.target as HTMLImageElement).src = FALLBACK_IMAGE;
-                          }}
-                        />
+                        <ArticleImage url={item.url} title={item.title} />
                       </div>
 
                       {/* Footer with Source and CTA */}

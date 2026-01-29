@@ -4,18 +4,37 @@ import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { motion } from 'framer-motion';
 import { ArrowRight, Calendar, ExternalLink } from 'lucide-react';
+import { useState } from 'react';
 
 function getArticleImageUrl(url: string): string {
   return `https://api.microlink.io/?url=${encodeURIComponent(url)}&meta=true&embed=image.url`;
 }
 
-const FALLBACK_IMAGE = 'data:image/svg+xml,' + encodeURIComponent(`
-  <svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
-    <rect fill="#1e3a5f" width="400" height="300"/>
-    <text x="200" y="140" text-anchor="middle" fill="#4fd1c5" font-family="Arial" font-size="24" font-weight="bold">GNLink</text>
-    <text x="200" y="170" text-anchor="middle" fill="#a0aec0" font-family="Arial" font-size="14">Na Mídia</text>
-  </svg>
-`);
+function getScreenshotUrl(url: string): string {
+  return `https://api.microlink.io/?url=${encodeURIComponent(url)}&screenshot=true&meta=false&embed=screenshot.url`;
+}
+
+function ArticleImage({ url, title }: { url: string; title: string }) {
+  const [imgSrc, setImgSrc] = useState(getArticleImageUrl(url));
+  const [fallbackLevel, setFallbackLevel] = useState(0);
+
+  const handleError = () => {
+    if (fallbackLevel === 0) {
+      setImgSrc(getScreenshotUrl(url));
+      setFallbackLevel(1);
+    }
+  };
+
+  return (
+    <img
+      src={imgSrc}
+      alt={title}
+      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+      loading="lazy"
+      onError={handleError}
+    />
+  );
+}
 
 const news = [
   {
@@ -85,16 +104,7 @@ export default function NewsPreview() {
                 <div className="card dark:bg-dark-800 group cursor-pointer h-full flex flex-col overflow-hidden">
                   {/* Article Screenshot */}
                   <div className="h-48 bg-gray-100 dark:bg-dark-700 overflow-hidden">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={getArticleImageUrl(item.url)}
-                      alt={item.title}
-                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
-                      loading="lazy"
-                      onError={(e) => {
-                        (e.target as HTMLImageElement).src = FALLBACK_IMAGE;
-                      }}
-                    />
+                    <ArticleImage url={item.url} title={item.title} />
                   </div>
                   
                   <div className="p-6 flex-grow flex flex-col">
