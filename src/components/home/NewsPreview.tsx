@@ -5,8 +5,8 @@ import { Link } from '@/i18n/routing';
 import { motion } from 'framer-motion';
 import { ArrowRight, Calendar, ExternalLink } from 'lucide-react';
 
-function getScreenshotUrl(url: string): string {
-  return `https://api.microlink.io/?url=${encodeURIComponent(url)}&screenshot=true&meta=false&embed=screenshot.url`;
+function getArticleImageUrl(url: string): string {
+  return `https://api.microlink.io/?url=${encodeURIComponent(url)}&meta=true&embed=image.url`;
 }
 
 const news = [
@@ -79,7 +79,7 @@ export default function NewsPreview() {
                   <div className="h-48 bg-gray-100 dark:bg-dark-700 overflow-hidden">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
-                      src={getScreenshotUrl(item.url)}
+                      src={getArticleImageUrl(item.url)}
                       alt={item.title}
                       className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
                       loading="lazy"

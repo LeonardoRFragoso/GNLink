@@ -14,8 +14,8 @@ const sourceLogos: Record<string, { bg: string; text: string }> = {
   'Log Web': { bg: 'bg-red-600', text: 'LOG WEB' },
 };
 
-function getScreenshotUrl(url: string): string {
-  return `https://api.microlink.io/?url=${encodeURIComponent(url)}&screenshot=true&meta=false&embed=screenshot.url`;
+function getArticleImageUrl(url: string): string {
+  return `https://api.microlink.io/?url=${encodeURIComponent(url)}&meta=true&embed=image.url`;
 }
 
 const newsItems = [
@@ -177,7 +177,7 @@ export default function NewsPage() {
                       <div className="relative h-52 overflow-hidden bg-gray-100 dark:bg-dark-700">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
-                          src={getScreenshotUrl(item.url)}
+                          src={getArticleImageUrl(item.url)}
                           alt={item.title}
                           className="w-full h-full object-cover object-top"
                           loading="lazy"

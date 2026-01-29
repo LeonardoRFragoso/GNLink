@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MessageCircle, X } from 'lucide-react';
 
-const WHATSAPP_NUMBER = '5521932694071';
+const WHATSAPP_NUMBER = '5521975424000';
 const DEFAULT_MESSAGE = 'Olá! Gostaria de mais informações sobre a GNLink.';
 
 export default function WhatsAppButton() {
