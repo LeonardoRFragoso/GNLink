@@ -2,7 +2,17 @@
 
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
-import { Calendar, ExternalLink, ArrowRight } from 'lucide-react';
+import { Calendar, ExternalLink, Newspaper } from 'lucide-react';
+import Image from 'next/image';
+
+const sourceLogos: Record<string, { bg: string; text: string }> = {
+  'Eixos': { bg: 'bg-blue-600', text: 'EIXOS' },
+  'Brasil Energia': { bg: 'bg-green-600', text: 'BRASIL ENERGIA' },
+  'Canal Energia': { bg: 'bg-orange-500', text: 'CANAL ENERGIA' },
+  'EPBR': { bg: 'bg-purple-600', text: 'EPBR' },
+  'Kincaid': { bg: 'bg-gray-700', text: 'KINCAID' },
+  'Log Web': { bg: 'bg-red-600', text: 'LOG WEB' },
+};
 
 const newsItems = [
   {
@@ -12,6 +22,7 @@ const newsItems = [
     date: '2024-12-15',
     url: 'https://eixos.com.br/gas-natural/mercado-de-gas/gnlink-vence-chamada-da-cegas-para-fornecer-gas-ao-interior-do-ceara/',
     category: 'Negócios',
+    image: 'https://images.unsplash.com/photo-1518709766631-a6a7f45921c3?w=400&h=250&fit=crop',
   },
   {
     id: 2,
@@ -20,6 +31,7 @@ const newsItems = [
     date: '2024-11-28',
     url: 'https://brasilenergia.com.br/energia/gas/trevo-drywall-firma-acordo-com-gnlink-para-uso-de-gas-natural',
     category: 'Parcerias',
+    image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400&h=250&fit=crop',
   },
   {
     id: 3,
@@ -28,6 +40,7 @@ const newsItems = [
     date: '2024-11-15',
     url: 'https://eixos.com.br/gas-natural/mercado-de-gas/gnlink-recebe-aval-da-anp-para-iniciar-operacao-de-sua-1a-planta-de-liquefacao',
     category: 'Operações',
+    image: 'https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=400&h=250&fit=crop',
   },
   {
     id: 4,
@@ -36,6 +49,7 @@ const newsItems = [
     date: '2024-10-20',
     url: 'https://www.canalenergia.com.br/noticias/53275479/gnlink-assina-contrato-de-liquefacao-e-compressao-de-gas-no-rn',
     category: 'Contratos',
+    image: 'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=400&h=250&fit=crop',
   },
   {
     id: 5,
@@ -44,6 +58,7 @@ const newsItems = [
     date: '2024-10-05',
     url: 'https://www.kincaid.com.br/anp-autoriza-construcao-de-nova-unidade-de-liquefacao-da-gnlink/',
     category: 'Regulatório',
+    image: 'https://images.unsplash.com/photo-1513828583688-c52646db42da?w=400&h=250&fit=crop',
   },
   {
     id: 6,
@@ -52,6 +67,7 @@ const newsItems = [
     date: '2024-09-18',
     url: 'https://epbr.com.br/a-estrategia-da-gnlink-para-expandir-o-gnl-em-pequena-escala/',
     category: 'Estratégia',
+    image: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=400&h=250&fit=crop',
   },
   {
     id: 7,
@@ -60,6 +76,7 @@ const newsItems = [
     date: '2024-08-25',
     url: 'https://www.logweb.com.br/gnlink-assina-contrato-com-a-contatto-para-transporte-de-gnl-e-gnc/',
     category: 'Logística',
+    image: 'https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=400&h=250&fit=crop',
   },
   {
     id: 8,
@@ -68,6 +85,7 @@ const newsItems = [
     date: '2024-08-10',
     url: 'https://brasilenergia.com.br/petroleoegas/gas/gnlink-assina-acordo-com-a-tradener-para-construir-e-operar-planta-de-liquefacao-no-campo-de-barra-bonita',
     category: 'Projetos',
+    image: 'https://images.unsplash.com/photo-1545209463-e2827c2ed9c1?w=400&h=250&fit=crop',
   },
   {
     id: 9,
@@ -76,6 +94,7 @@ const newsItems = [
     date: '2024-07-22',
     url: 'https://epbr.com.br/gnlink-e-petrobahia-formam-parceria-para-investir-em-gnl-em-pequena-escala-na-bahia/',
     category: 'Parcerias',
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=250&fit=crop',
   },
   {
     id: 10,
@@ -84,6 +103,7 @@ const newsItems = [
     date: '2024-07-05',
     url: 'https://brasilenergia.com.br/energia/gnlink-com-14-projetos-de-liquefacao-de-gas-em-desenvolvimento/',
     category: 'Expansão',
+    image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400&h=250&fit=crop',
   },
   {
     id: 11,
@@ -92,6 +112,7 @@ const newsItems = [
     date: '2024-06-18',
     url: 'https://epbr.com.br/gnlink-fecha-acordo-com-empresa-portuguesa-para-projetos-de-hidrogenio-verde-no-brasil/',
     category: 'Hidrogênio Verde',
+    image: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=400&h=250&fit=crop',
   },
   {
     id: 12,
@@ -100,6 +121,7 @@ const newsItems = [
     date: '2024-06-01',
     url: 'https://www.canalenergia.com.br/noticias/53250385/gnlink-e-a-prf-gas-solutions-firmam-acordo-para-a-producao-de-h2v',
     category: 'Hidrogênio Verde',
+    image: 'https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?w=400&h=250&fit=crop',
   },
 ];
 
@@ -140,58 +162,72 @@ export default function NewsPage() {
       <section className="py-20 bg-white dark:bg-dark-900">
         <div className="container-custom">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {newsItems.map((item, index) => (
-              <motion.article
-                key={item.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
-                className="group"
-              >
-                <a
-                  href={item.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block h-full"
+            {newsItems.map((item, index) => {
+              const sourceLogo = sourceLogos[item.source] || { bg: 'bg-gray-600', text: item.source };
+              
+              return (
+                <motion.article
+                  key={item.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.05 }}
+                  className="group"
                 >
-                  <div className="bg-white dark:bg-dark-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col border border-dark-100 dark:border-dark-700">
-                    {/* Category Badge */}
-                    <div className="p-6 pb-0">
-                      <span className="inline-block px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400 text-xs font-medium rounded-full">
-                        {item.category}
-                      </span>
-                    </div>
-
-                    {/* Content */}
-                    <div className="p-6 flex-grow flex flex-col">
-                      <h2 className="text-lg font-semibold text-dark-800 dark:text-white mb-4 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors line-clamp-3">
-                        {item.title}
-                      </h2>
-
-                      <div className="mt-auto">
-                        <div className="flex items-center justify-between text-sm text-dark-500 dark:text-dark-400 mb-4">
-                          <div className="flex items-center gap-2">
-                            <Calendar className="w-4 h-4" />
-                            <time>{formatDate(item.date)}</time>
-                          </div>
-                        </div>
-
-                        <div className="flex items-center justify-between pt-4 border-t border-dark-100 dark:border-dark-700">
-                          <span className="text-sm text-dark-500 dark:text-dark-400">
-                            {t('source')}: <span className="font-medium text-dark-700 dark:text-dark-300">{item.source}</span>
+                  <a
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block h-full"
+                  >
+                    <div className="bg-white dark:bg-dark-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col overflow-hidden border border-dark-100 dark:border-dark-700">
+                      {/* Image */}
+                      <div className="relative h-48 overflow-hidden">
+                        <Image
+                          src={item.image}
+                          alt={item.title}
+                          fill
+                          className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                        {/* Source Badge Overlay */}
+                        <div className="absolute top-3 left-3">
+                          <span className={`inline-block px-3 py-1 ${sourceLogo.bg} text-white text-xs font-bold rounded shadow-lg`}>
+                            {sourceLogo.text}
                           </span>
-                          <span className="flex items-center text-primary-600 dark:text-primary-400 font-medium text-sm group-hover:text-primary-700 dark:group-hover:text-primary-300">
-                            {t('readMore')}
-                            <ExternalLink className="w-4 h-4 ml-1" />
+                        </div>
+                        {/* Category Badge */}
+                        <div className="absolute top-3 right-3">
+                          <span className="inline-block px-3 py-1 bg-white/90 dark:bg-dark-800/90 text-primary-700 dark:text-primary-400 text-xs font-medium rounded-full backdrop-blur-sm">
+                            {item.category}
                           </span>
                         </div>
                       </div>
+
+                      {/* Content */}
+                      <div className="p-5 flex-grow flex flex-col">
+                        <h2 className="text-lg font-semibold text-dark-800 dark:text-white mb-3 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors line-clamp-3">
+                          {item.title}
+                        </h2>
+
+                        <div className="mt-auto">
+                          <div className="flex items-center text-sm text-dark-500 dark:text-dark-400 mb-4">
+                            <Calendar className="w-4 h-4 mr-2" />
+                            <time>{formatDate(item.date)}</time>
+                          </div>
+
+                          <div className="flex items-center justify-center pt-4 border-t border-dark-100 dark:border-dark-700">
+                            <span className="flex items-center text-primary-600 dark:text-primary-400 font-semibold text-sm group-hover:text-primary-700 dark:group-hover:text-primary-300">
+                              {t('readMore')}
+                              <ExternalLink className="w-4 h-4 ml-2" />
+                            </span>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </a>
-              </motion.article>
-            ))}
+                  </a>
+                </motion.article>
+              );
+            })}
           </div>
         </div>
       </section>
