@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import { Calendar, ExternalLink } from 'lucide-react';
+import Image from 'next/image';
 
 const sourceLogos: Record<string, { bg: string; text: string }> = {
   'Eixos': { bg: 'bg-blue-600', text: 'EIXOS' },
@@ -12,6 +13,10 @@ const sourceLogos: Record<string, { bg: string; text: string }> = {
   'Kincaid': { bg: 'bg-gray-700', text: 'KINCAID' },
   'Log Web': { bg: 'bg-red-600', text: 'LOG WEB' },
 };
+
+function getScreenshotUrl(url: string): string {
+  return `https://api.microlink.io/?url=${encodeURIComponent(url)}&screenshot=true&meta=false&embed=screenshot.url`;
+}
 
 const newsItems = [
   {
@@ -168,31 +173,15 @@ export default function NewsPage() {
                     className="block h-full"
                   >
                     <div className="bg-white dark:bg-dark-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col overflow-hidden border border-dark-100 dark:border-dark-700 group-hover:-translate-y-1">
-                      {/* Article Preview - Screenshot Style */}
-                      <div className="relative bg-gray-100 dark:bg-dark-700 p-3">
-                        {/* Browser-like header */}
-                        <div className="bg-white dark:bg-dark-600 rounded-lg shadow-md overflow-hidden">
-                          {/* Source Header */}
-                          <div className={`${sourceLogo.bg} px-3 py-2 flex items-center justify-between`}>
-                            <span className="text-white text-xs font-bold">{sourceLogo.text}</span>
-                            <div className="flex gap-1">
-                              <div className="w-2 h-2 rounded-full bg-white/30"></div>
-                              <div className="w-2 h-2 rounded-full bg-white/30"></div>
-                              <div className="w-2 h-2 rounded-full bg-white/30"></div>
-                            </div>
-                          </div>
-                          {/* Article Content Preview */}
-                          <div className="p-3">
-                            <p className="text-[10px] text-gray-400 mb-1">{item.category}</p>
-                            <h3 className="text-xs font-semibold text-dark-800 dark:text-dark-200 line-clamp-2 mb-2">
-                              {item.title}
-                            </h3>
-                            <div className="flex items-center gap-2 text-[10px] text-gray-400">
-                              <Calendar className="w-3 h-3" />
-                              <span>{formatDate(item.date)}</span>
-                            </div>
-                          </div>
-                        </div>
+                      {/* Article Screenshot Preview */}
+                      <div className="relative h-52 overflow-hidden bg-gray-100 dark:bg-dark-700">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={getScreenshotUrl(item.url)}
+                          alt={item.title}
+                          className="w-full h-full object-cover object-top"
+                          loading="lazy"
+                        />
                       </div>
 
                       {/* Footer with Source and CTA */}
