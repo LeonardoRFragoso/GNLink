@@ -30,14 +30,12 @@ const FALLBACK_IMAGE = 'data:image/svg+xml,' + encodeURIComponent(`
   </svg>
 `);
 
-function ArticleImage({ url, title }: { url: string; title: string }) {
+function ArticleImage({ url, title, staticImage }: { url: string; title: string; staticImage?: string }) {
   const [fallbackLevel, setFallbackLevel] = useState(0);
   
-  const imageSources = [
-    getArticleImageUrl(url),
-    getScreenshotUrl(url),
-    FALLBACK_IMAGE
-  ];
+  const imageSources = staticImage 
+    ? [staticImage, FALLBACK_IMAGE]
+    : [getArticleImageUrl(url), getScreenshotUrl(url), FALLBACK_IMAGE];
 
   const handleError = () => {
     if (fallbackLevel < imageSources.length - 1) {
@@ -89,6 +87,7 @@ const newsItems = [
     date: '2024-10-20',
     url: 'https://www.canalenergia.com.br/noticias/53275479/gnlink-assina-contrato-de-liquefacao-e-compressao-de-gas-no-rn',
     category: 'Contratos',
+    staticImage: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&h=400&fit=crop',
   },
   {
     id: 5,
@@ -97,6 +96,7 @@ const newsItems = [
     date: '2024-10-05',
     url: 'https://www.kincaid.com.br/anp-autoriza-construcao-de-nova-unidade-de-liquefacao-da-gnlink/',
     category: 'Regulatório',
+    staticImage: 'https://images.unsplash.com/photo-1518709766631-a6a7f45921c3?w=600&h=400&fit=crop',
   },
   {
     id: 6,
@@ -153,6 +153,7 @@ const newsItems = [
     date: '2024-06-01',
     url: 'https://www.canalenergia.com.br/noticias/53250385/gnlink-e-a-prf-gas-solutions-firmam-acordo-para-a-producao-de-h2v',
     category: 'Hidrogênio Verde',
+    staticImage: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=600&h=400&fit=crop',
   },
 ];
 
@@ -214,7 +215,7 @@ export default function NewsPage() {
                     <div className="bg-white dark:bg-dark-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col overflow-hidden border border-dark-100 dark:border-dark-700 group-hover:-translate-y-1">
                       {/* Article Screenshot Preview */}
                       <div className="relative h-52 overflow-hidden bg-gray-100 dark:bg-dark-700">
-                        <ArticleImage url={item.url} title={item.title} />
+                        <ArticleImage url={item.url} title={item.title} staticImage={(item as any).staticImage} />
                       </div>
 
                       {/* Footer with Source and CTA */}
