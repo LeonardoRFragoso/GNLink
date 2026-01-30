@@ -6,6 +6,7 @@ import { ThemeProvider } from '@/contexts/ThemeContext';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import WhatsAppButton from '@/components/ui/WhatsAppButton';
+import { OrganizationJsonLd } from '@/components/seo/JsonLd';
 import '../globals.css';
 
 export function generateStaticParams() {
@@ -50,6 +51,7 @@ export default async function LocaleLayout({
         />
       </head>
       <body suppressHydrationWarning className="min-h-screen flex flex-col bg-white dark:bg-dark-900 text-dark-800 dark:text-dark-100 transition-colors duration-300">
+        <OrganizationJsonLd />
         <ThemeProvider>
           <NextIntlClientProvider messages={messages}>
             <Header />
